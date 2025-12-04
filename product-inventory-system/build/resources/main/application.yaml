@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: product-inventory-system
+
+  datasource:
+    url: jdbc:h2:mem:product_inventory  # Use H2 for easy setup
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework: INFO
+    dev.inventory: DEBUG
